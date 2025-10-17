@@ -39,11 +39,15 @@
     /* Contact card */
     .info-card{border:1px solid #e6eef5;background:#f7fbff;border-radius:14px;box-shadow:0 3px 8px rgba(0,0,0,.04)}
     .info-text{font:400 15px Verdana, Geneva, sans-serif;color:#4c527d;margin:0}
-    .info-sublabel{font:700 12px Verdana, Geneva, sans-serif;color:#00000;text-transform:uppercase;letter-spacing:.3px;margin-bottom:4px}
+    .info-sublabel{font:700 12px Verdana, Geneva, sans-serif;color:#000;text-transform:uppercase;letter-spacing:.3px;margin-bottom:4px}
     .info-badge{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-right:10px;font-size:18px}
     .badge-green{background:#eaf5ea;border:1px solid #d6ecd8}
     .badge-blue{background:#eaf2fb;border:1px solid #d7e5f6}
     .divider-soft{height:1px;background:#e9eef3;line-height:1px;font-size:0;margin:6px 0}
+
+    /* NEW: elevated box around intro (title + paragraph) */
+    .elevated{border:1px solid #e6eef5;border-radius:14px;background:#ffffff;
+              box-shadow:0 3px 10px rgba(0,0,0,.06)}
   </style>
 </head>
 <body>
@@ -65,18 +69,24 @@
           </td></tr>
         </table>
 
-        <!-- INTRO -->
+        <!-- INTRO (wrapped in elevated box) -->
         <table role="presentation" class="container card" cellspacing="0" cellpadding="0" align="center">
           <tr><td class="p20">
-            <h1 class="title center">Hallo und herzlichen Dank für Ihre Anfrage!</h1>
-            <p class="lead center">
-              Schön, dass Sie sich für eine Zusammenarbeit mit <strong>V&amp;E GmbH</strong> und
-              <strong>Work &amp; Life GmbH</strong> interessieren. Damit wir Sie schnell
-              kennenlernen und passende Jobangebote vorschlagen können, kontaktieren Sie uns bitte.
-            </p>
+            <table role="presentation" width="100%" class="elevated">
+              <tr>
+                <td style="padding:18px 18px 20px">
+                  <h1 class="title center" style="margin-top:2px;">Hallo und herzlichen Dank für Ihre Anfrage!</h1>
+                  <p class="lead center" style="margin-top:8px;">
+                    Schön, dass Sie sich für eine Zusammenarbeit mit <strong>V&amp;E GmbH</strong> und
+                    <strong>Work &amp; Life GmbH</strong> interessieren. Damit wir Sie schnell
+                    kennenlernen und passende Jobangebote vorschlagen können, kontaktieren Sie uns bitte.
+                  </p>
+                </td>
+              </tr>
+            </table>
           </td></tr>
 
-          <!-- CTAs (one row, bigger gap) -->
+          <!-- CTAs -->
           <tr><td class="p20 center" style="padding-top:12px;padding-bottom:8px;">
             <a class="btn" href="tel:+4917620668267" target="_blank">📞&nbsp;Jetzt anrufen</a>
             <a class="btn" href="https://maps.google.com/?q=Lindemann-Platz+3,+33689+Bielefeld" target="_blank">📍&nbsp;Route zum Büro</a>
@@ -93,8 +103,6 @@
                       <div class="info-badge badge-green">📞</div>
                       <div>
                         <div class="info-sublabel">Kontakt</div>
-
-                        <!-- Two-column inner table: labels + phone numbers -->
                         <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top:4px;">
                           <tr>
                             <td style="padding-right:10px;font:400 15px Verdana, sans-serif;color:#4c527d;text-align:right;white-space:nowrap;">Mobil:</td>
@@ -115,7 +123,6 @@
                             </td>
                           </tr>
                         </table>
-
                       </div>
                     </div>
                   </td>
