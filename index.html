@@ -1,278 +1,268 @@
 <!DOCTYPE html>
 <html lang="de" dir="ltr" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="x-apple-disable-message-reformatting">
-  <meta content="telephone=no" name="format-detection">
-  <title></title>
-  <style>
-    body{margin:0;background:#fafafa}
-    img{border:0;display:block;line-height:0}
-    .container{width:600px;max-width:100%}
-    .card{background:#fff}
-    .p20{padding:20px}
-    .center{text-align:center}
-    .title{font:700 34px Verdana, Geneva, sans-serif;line-height:1.15;color:#56b32c;margin:0 0 8px}
-    .lead{font:400 20px Verdana, Geneva, sans-serif;line-height:1.45;color:#333;margin:0}
-    .btn{background:#3c76a5;border-radius:12px;display:inline-block;
-         font:700 18px Verdana, Geneva, sans-serif;line-height:52px;
-         text-decoration:none;color:#ffffff !important;width:240px;text-align:center;
-         margin:0 8px;box-shadow:0 4px 10px rgba(0,0,0,.08)}
-    .divider{height:1px;background:#e9eef3;line-height:1px;font-size:0}
-    .foot{background:#101010;color:#fff}
-@media (max-width:600px){
-  .stack {display:block !important;width:100% !important;text-align:center !important;}
-  .info-row {display:block !important;text-align:center !important;margin-bottom:14px;}
-  .info-badge {margin:0 auto 6px auto !important;} /* центрування іконки */
-  .info-text, .info-sublabel {text-align:center !important;}
-}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="x-apple-disable-message-reformatting">
+<meta content="telephone=no" name="format-detection">
+<title></title>
+<style>
+  /* Base */
+  body{margin:0;background:#fafafa}
+  img{border:0;display:block;line-height:0}
+  .container{width:600px;max-width:100%}
+  .card{background:#fff}
+  .p20{padding:20px}
+  .center{text-align:center}
+  .title{font:700 34px Verdana, Geneva, sans-serif;line-height:1.15;color:#56b32c;margin:0}
+  .lead{font:400 20px Verdana, Geneva, sans-serif;line-height:1.45;color:#333;margin:0}
+  .btn{background:#3c76a5;border-radius:12px;display:block;
+       font:700 18px Verdana, Geneva, sans-serif;line-height:56px;
+       text-decoration:none;color:#ffffff !important;width:270px;text-align:center;
+       margin:0 auto;box-shadow:0 4px 10px rgba(0,0,0,.08)}
+  .btn + .btn{margin-top:14px}
+  .divider{height:1px;background:#e9eef3;line-height:1px;font-size:0}
 
-    /* Benefits */
-    .benefit-card{border:1px solid #e6eef5;border-radius:12px;background:#ffffff;box-shadow:0 2px 6px rgba(0,0,0,.04);margin-bottom:16px}
-    .benefit-card .inner{padding:14px;display:flex;align-items:flex-start}
-    .icon-wrap{flex-shrink:0;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-right:12px}
-    .icon-green{background:#eaf5ea;border:1px solid #d6ecd8}
-    .icon-blue{background:#eaf2fb;border:1px solid #d7e5f6}
-    .benefit-title{font:700 19px Verdana, Geneva, sans-serif;color:#0b5394;margin:0 0 6px}
-    .benefit-desc{font:400 15px Verdana, Geneva, sans-serif;color:#2f6f2f;margin:0}
+  /* Intro callout */
+  .intro-callout{
+    border:1px solid #e8eef5; border-radius:16px; box-shadow:0 6px 16px rgba(0,0,0,.06);
+  }
 
-    /* Contact card */
-    .info-card{border:1px solid #e6eef5;background:#f7fbff;border-radius:14px;box-shadow:0 3px 8px rgba(0,0,0,.04)}
-    .info-text{font:400 15px Verdana, Geneva, sans-serif;color:#4c527d;margin:0}
-    .info-sublabel{font:700 12px Verdana, Geneva, sans-serif;color:#000;text-transform:uppercase;letter-spacing:.3px;margin-bottom:4px}
-    .info-badge{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-right:10px;font-size:18px}
-    .badge-green{background:#eaf5ea;border:1px solid #d6ecd8}
-    .badge-blue{background:#eaf2fb;border:1px solid #d7e5f6}
-    .divider-soft{height:1px;background:#e9eef3;line-height:1px;font-size:0;margin:6px 0}
+  /* Contact card */
+  .info-card{border:1px solid #e6eef5;background:#f7fbff;border-radius:14px;box-shadow:0 3px 8px rgba(0,0,0,.05)}
+  .info-title{font:700 12px Verdana, Geneva, sans-serif;color:#000;text-transform:uppercase;letter-spacing:.3px;margin:0 0 6px}
+  .info-text{font:400 14px Verdana, Geneva, sans-serif;color:#4c527d;margin:0}
+  .info-strong{font-weight:700;color:#0b5394}
+  .nowrap{white-space:nowrap}
+  .info-row{display:flex;align-items:flex-start;gap:12px;margin:10px 0}
+  .info-badge{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:0 0 40px}
+  .badge-green{background:#eaf5ea;border:1px solid #d6ecd8}
+  .badge-blue{background:#eaf2fb;border:1px solid #d7e5f6}
+  .divider-soft{height:1px;background:#e9eef3;line-height:1px;font-size:0;margin:10px 0}
 
-    /* NEW: elevated box around intro (title + paragraph) */
-    .elevated{border:1px solid #e6eef5;border-radius:14px;background:#ffffff;
-              box-shadow:0 3px 10px rgba(0,0,0,.06)}
-  </style>
+  /* Benefits cards */
+  .benefit-card{border:1px solid #e6eef5;border-radius:12px;background:#ffffff;box-shadow:0 2px 6px rgba(0,0,0,.04);margin-bottom:16px}
+  .benefit-card .inner{padding:14px;display:flex;align-items:flex-start}
+  .icon-wrap{flex-shrink:0;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-right:12px}
+  .icon-green{background:#eaf5ea;border:1px solid #d6ecd8}
+  .icon-blue{background:#eaf2fb;border:1px solid #d7e5f6}
+  .benefit-title{font:700 19px Verdana, Geneva, sans-serif;color:#0b5394;margin:0 0 6px}
+  .benefit-desc{font:400 15px Verdana, Geneva, sans-serif;color:#2f6f2f;margin:0}
+
+  /* Footer */
+  .foot{background:#101010;color:#fff}
+  .foot td{vertical-align:top}
+
+  /* Mobile */
+  @media (max-width:600px){
+    .stack{display:block !important;width:100% !important}
+    .btn{width:100%}
+    .title{font-size:28px}
+    .lead{font-size:18px}
+
+    .info-grid{display:block !important}
+    .info-col{display:block !important;width:100% !important;text-align:center !important}
+    .info-row{justify-content:center !important}
+    .info-row .content{max-width:360px;text-align:left}
+    .info-badge{width:28px;height:28px;flex-basis:28px;margin-top:2px}
+    .divider-soft{margin:12px auto}
+
+    .foot td{display:block !important;width:100% !important;text-align:center !important;margin:6px 0}
+  }
+</style>
 </head>
 <body>
-  <div style="display:none;max-height:0;overflow:hidden;opacity:0;font-size:1px;line-height:1px;color:#fafafa;">
-    Vielen Dank für Ihre Anfrage – wir melden uns und haben passende Stellen für Sie.
-  </div>
-
   <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="center">
+    <tr><td class="center">
 
-        <!-- HEADER -->
-        <table role="presentation" class="container" cellspacing="0" cellpadding="0" align="center">
-          <tr><td class="p20 card center">
-            <a href="https://www.v-e-gmbh.de/" target="_blank">
-              <img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/image_0BS.png" width="500" alt="V&E GmbH und Work & Life GmbH">
-            </a>
-            <table role="presentation" width="100%"><tr><td class="divider">&nbsp;</td></tr></table>
-          </td></tr>
-        </table>
+      <!-- HEADER -->
+      <table role="presentation" class="container" cellspacing="0" cellpadding="0" align="center">
+        <tr><td class="p20 card center">
+          <a href="https://www.v-e-gmbh.de/" target="_blank">
+            <img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/image_0BS.png" width="500" alt="V&E GmbH und Work & Life GmbH">
+          </a>
+          <table role="presentation" width="100%"><tr><td class="divider">&nbsp;</td></tr></table>
+        </td></tr>
+      </table>
 
-        <!-- INTRO (wrapped in elevated box) -->
-        <table role="presentation" class="container card" cellspacing="0" cellpadding="0" align="center">
-          <tr><td class="p20">
-            <table role="presentation" width="100%" class="elevated">
+      <!-- INTRO -->
+      <table role="presentation" class="container card intro-callout" cellspacing="0" cellpadding="0" align="center">
+        <tr><td class="p20">
+          <h1 class="title center">Hallo und herzlichen Dank für Ihre Anfrage!</h1>
+          <p class="lead center" style="margin-top:10px">
+            Schön, dass Sie sich für eine Zusammenarbeit mit <strong>V&amp;E GmbH</strong> und
+            <strong>Work &amp; Life GmbH</strong> interessieren. Damit wir Sie schnell
+            kennenlernen und passende Jobangebote vorschlagen können, kontaktieren Sie uns bitte.
+          </p>
+        </td></tr>
+      </table>
+
+      <!-- CTAs -->
+      <table role="presentation" class="container card" cellspacing="0" cellpadding="0" align="center">
+        <tr><td class="p20 center">
+          <a class="btn" href="tel:+49 1762 066 82 67" target="_blank">📞&nbsp;Jetzt anrufen</a>
+          <a class="btn" href="https://maps.google.com/?q=Lindemann-Platz+3,+33689+Bielefeld" target="_blank">📍&nbsp;Route zum Büro</a>
+        </td></tr>
+
+        <!-- CONTACT & HOURS -->
+        <tr><td class="p20">
+          <table role="presentation" width="100%" class="info-card"><tr><td class="p20">
+            <table role="presentation" width="100%" class="info-grid">
               <tr>
-                <td style="padding:18px 18px 20px">
-                  <h1 class="title center" style="margin-top:2px;">Hallo und herzlichen Dank für Ihre Anfrage!</h1>
-                  <p class="lead center" style="margin-top:8px;">
-                    Schön, dass Sie sich für eine Zusammenarbeit mit <strong>V&amp;E GmbH</strong> und
-                    <strong>Work &amp; Life GmbH</strong> interessieren. Damit wir Sie schnell
-                    kennenlernen und passende Jobangebote vorschlagen können, kontaktieren Sie uns bitte.
-                  </p>
+                <!-- Phones -->
+                <td class="info-col" width="50%" valign="top">
+                  <div class="info-row">
+                    <div class="info-badge badge-green">📞</div>
+                    <div class="content">
+                      <div class="info-title">Kontakt</div>
+                      <p class="info-text">Mobil:&nbsp;<span class="info-strong nowrap">+49&nbsp;1762&nbsp;0668&nbsp;267</span></p>
+                      <p class="info-text">Tel:&nbsp;&nbsp;&nbsp;&nbsp;<span class="info-strong nowrap">+49&nbsp;5205&nbsp;9987&nbsp;283</span></p>
+                      <p class="info-text">Fax:&nbsp;&nbsp;&nbsp;&nbsp;<span class="info-strong nowrap">+49&nbsp;5205&nbsp;9987&nbsp;284</span></p>
+                    </div>
+                  </div>
+                </td>
+                <!-- Address & Hours -->
+                <td class="info-col" width="50%" valign="top">
+                  <div class="info-row">
+                    <div class="info-badge badge-blue">📍</div>
+                    <div class="content">
+                      <div class="info-title">Adresse</div>
+                      <p class="info-text">Lindemann-Platz&nbsp;3<br>33689&nbsp;Bielefeld</p>
+                    </div>
+                  </div>
+               
+                  <div class="info-row">
+                    <div class="info-badge badge-blue">🕘</div>
+                    <div class="content">
+                      <div class="info-title">Öffnungszeiten</div>
+                      <p class="info-text"><strong style="color:#0b5394">Mo–Fr</strong>&nbsp;09:00–17:00</p>
+                    </div>
+                  </div>
                 </td>
               </tr>
             </table>
-          </td></tr>
+          </td></tr></table>
+        </td></tr>
 
-          <!-- CTAs -->
-          <tr><td class="p20 center" style="padding-top:12px;padding-bottom:8px;">
-            <a class="btn" href="tel:+4917620668267" target="_blank">📞&nbsp;Jetzt anrufen</a>
-            <a class="btn" href="https://maps.google.com/?q=Lindemann-Platz+3,+33689+Bielefeld" target="_blank">📍&nbsp;Route zum Büro</a>
-          </td></tr>
+        <!-- CV -->
+        <tr><td class="p20 center">
+          <p style="font:700 18px Verdana, Geneva, sans-serif;color:#333;margin:0 0 12px">
+            Sie können uns auch Ihren Lebenslauf zusenden.
+          </p>
+          <a class="btn" href="" target="_blank" style="width:260px;line-height:52px;font-size:16px;margin-top:6px">📝&nbsp;Lebenslauf senden</a>
+          <table role="presentation" width="100%" style="margin:20px 0"><tr><td class="divider">&nbsp;</td></tr></table>
+          <img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/image_9Eu.png" width="560" alt="Teammeeting">
+        </td></tr>
+      </table>
 
-          <!-- CONTACT & HOURS -->
-          <tr><td class="p20">
-            <table role="presentation" width="100%" class="info-card"><tr><td class="p20">
-              <table role="presentation" width="100%">
-                <tr>
-                  <!-- Phones -->
-                  <td class="stack" width="50%" valign="top">
-                    <div style="display:flex;align-items:flex-start;">
-                      <div class="info-badge badge-green">📞</div>
-                      <div>
-                        <div class="info-sublabel">Kontakt</div>
-                        <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top:4px;">
-                          <tr>
-                            <td style="padding-right:10px;font:400 15px Verdana, sans-serif;color:#4c527d;text-align:right;white-space:nowrap;">Mobil:</td>
-                            <td style="font:700 15px Verdana, sans-serif;color:#0b5394;white-space:nowrap;">
-                              +49&nbsp;1762&nbsp;0668&nbsp;267
-                            </td>
-                          </tr>
-                          <tr>
-                            <td style="padding-right:10px;font:400 15px Verdana, sans-serif;color:#4c527d;text-align:right;white-space:nowrap;">Tel:</td>
-                            <td style="font:700 15px Verdana, sans-serif;color:#0b5394;white-space:nowrap;">
-                              +49&nbsp;5205&nbsp;9987&nbsp;283
-                            </td>
-                          </tr>
-                          <tr>
-                            <td style="padding-right:10px;font:400 15px Verdana, sans-serif;color:#4c527d;text-align:right;white-space:nowrap;">Fax:</td>
-                            <td style="font:700 15px Verdana, sans-serif;color:#0b5394;white-space:nowrap;">
-                              +49&nbsp;5205&nbsp;9987&nbsp;284
-                            </td>
-                          </tr>
-                        </table>
-                      </div>
-                    </div>
-                  </td>
-
-                  <!-- Address & Hours -->
-                  <td class="stack" width="50%" valign="top">
-                    <table role="presentation" width="100%">
-                      <tr><td style="display:flex;align-items:flex-start;">
-                        <div class="info-badge badge-blue">📍</div>
-                        <div>
-                          <div class="info-sublabel">Adresse</div>
-                          <p class="info-text" style="margin-top:2px;">Lindemann-Platz 3<br>33689 Bielefeld</p>
-                        </div>
-                      </td></tr>
-                      <tr><td class="divider-soft">&nbsp;</td></tr>
-                      <tr><td style="display:flex;align-items:center;">
-                        <div class="info-badge badge-blue">🕘</div>
-                        <div>
-                          <div class="info-sublabel">Öffnungszeiten</div>
-                          <p class="info-text" style="margin-top:2px;"><strong style="color:#0b5394">Mo–Fr</strong> 09:00–17:00</p>
-                        </div>
-                      </td></tr>
-                    </table>
-                  </td>
-                </tr>
+      <!-- BENEFITS -->
+      <table role="presentation" class="container card" cellspacing="0" cellpadding="0" align="center">
+        <tr><td class="p20">
+          <table role="presentation" width="100%">
+            <tr><td>
+              <table role="presentation" width="100%" class="benefit-card">
+                <tr><td class="inner">
+                  <div class="icon-wrap icon-green"><img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/pngwingcom_11_sDg.png" width="36" alt="Arbeitsverträge"></div>
+                  <div>
+                    <h4 class="benefit-title">Arbeitsverträge</h4>
+                    <p class="benefit-desc">Faire Bedingungen nach aktuellen Tarifverträgen (iGZ/DGB) für Sicherheit und Stabilität.</p>
+                  </div>
+                </td></tr>
               </table>
-            </td></tr></table>
-          </td></tr>
+            </td></tr>
+            <tr><td>
+              <table role="presentation" width="100%" class="benefit-card">
+                <tr><td class="inner">
+                  <div class="icon-wrap icon-blue"><img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/pngwingcom_12_Mzh.png" width="36" alt="Finanzielle Sicherheit"></div>
+                  <div>
+                    <h4 class="benefit-title">Finanzielle Sicherheit</h4>
+                    <p class="benefit-desc">Pünktliche Lohnzahlungen, Feiertagsvergütung, Urlaubsansprüche und gute Arbeitsbedingungen.</p>
+                  </div>
+                </td></tr>
+              </table>
+            </td></tr>
+            <tr><td>
+              <table role="presentation" width="100%" class="benefit-card">
+                <tr><td class="inner">
+                  <div class="icon-wrap icon-green"><img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/pngwingcom_13.png" width="36" alt="Sozialleistungen"></div>
+                  <div>
+                    <h4 class="benefit-title">Sozialleistungen</h4>
+                    <p class="benefit-desc">Bezahlter Urlaub, Lohnfortzahlung im Krankheitsfall, Zuschläge und faire Rahmenbedingungen.</p>
+                  </div>
+                </td></tr>
+              </table>
+            </td></tr>
+            <tr><td>
+              <table role="presentation" width="100%" class="benefit-card">
+                <tr><td class="inner">
+                  <div class="icon-wrap icon-blue"><img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/81966.png" width="36" alt="Arbeitskleidung"></div>
+                  <div>
+                    <h4 class="benefit-title">Arbeitskleidung</h4>
+                    <p class="benefit-desc">Bereitstellung von Arbeits- und Schutzkleidung, wenn erforderlich.</p>
+                  </div>
+                </td></tr>
+              </table>
+            </td></tr>
+            <tr><td>
+              <table role="presentation" width="100%" class="benefit-card">
+                <tr><td class="inner">
+                  <div class="icon-wrap icon-green"><img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/5300441200.png" width="36" alt="Gesetzliche & soziale Sicherheit"></div>
+                  <div>
+                    <h4 class="benefit-title">Gesetzliche &amp; soziale Sicherheit</h4>
+                    <p class="benefit-desc">Kündigungsschutz und umfassende Absicherung.</p>
+                  </div>
+                </td></tr>
+              </table>
+            </td></tr>
+            <tr><td>
+              <table role="presentation" width="100%" class="benefit-card">
+                <tr><td class="inner">
+                  <div class="icon-wrap icon-blue"><img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/image.png" width="36" alt="Fester Standort"></div>
+                  <div>
+                    <h4 class="benefit-title">Fester Standort</h4>
+                    <p class="benefit-desc">Klare Strukturen und einfache Planung durch feste Einsatzorte.</p>
+                  </div>
+                </td></tr>
+              </table>
+            </td></tr>
+            <tr><td>
+              <table role="presentation" width="100%" class="benefit-card">
+                <tr><td class="inner">
+                  <div class="icon-wrap icon-green"><img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/pngwingcom_14.png" width="36" alt="Wohnung"></div>
+                  <div>
+                    <h4 class="benefit-title">Wohnung</h4>
+                    <p class="benefit-desc">Auf Wunsch stellen wir Mitarbeiterinnen und Mitarbeitern <strong>Wohnraum</strong> zur Verfügung.</p>
+                  </div>
+                </td></tr>
+              </table>
+            </td></tr>
+          </table>
+        </td></tr>
+      </table>
 
-          <!-- CV CTA -->
-          <tr><td class="p20 center">
-            <p style="font:700 18px Verdana, Geneva, sans-serif;color:#333;margin:0 0 10px">
-              Sie können uns auch Ihren Lebenslauf zusenden.
-            </p>
-            <a class="btn" href="" target="_blank" style="width:260px;line-height:52px;font-size:16px;margin-top:10px">📝&nbsp;Lebenslauf senden</a>
-            <table role="presentation" width="100%" style="margin:20px 0"><tr><td class="divider">&nbsp;</td></tr></table>
-            <img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/image_9Eu.png" width="560" alt="Teammeeting">
-          </td></tr>
-        </table>
+      <!-- FOOTER -->
+      <table role="presentation" class="container foot" cellspacing="0" cellpadding="0" align="center">
+        <tr><td class="p20">
+          <table role="presentation" width="100%">
+            <tr>
+              <td class="stack" style="width:33%;text-align:left">
+                <img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/vw.png" width="88" alt="V&E Logo">
+              </td>
+              <td class="stack" style="width:33%;font:400 11px Arial, Helvetica, sans-serif;line-height:1.6;text-align:left">
+                Tel. +49 (0) 5205 9987 – 283<br>
+                Fax +49 (0) 5205 9987 – 284<br>
+                Mobil +49 (0) 1762 0668 – 267
+              </td>
+              <td class="stack" style="width:33%;font:400 11px Arial, Helvetica, sans-serif;line-height:1.6;text-align:right">
+                Lindemann-Platz 3<br>33689 Bielefeld
+              </td>
+            </tr>
+          </table>
+        </td></tr>
+      </table>
 
-        <!-- BENEFITS -->
-        <table role="presentation" class="container card" cellspacing="0" cellpadding="0" align="center">
-          <tr><td class="p20">
-            <table role="presentation" width="100%">
-              <tr><td>
-                <table role="presentation" width="100%" class="benefit-card">
-                  <tr><td class="inner">
-                    <div class="icon-wrap icon-green"><img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/pngwingcom_11_sDg.png" width="36" alt="Arbeitsverträge"></div>
-                    <div>
-                      <h4 class="benefit-title">Arbeitsverträge</h4>
-                      <p class="benefit-desc">Faire Bedingungen nach aktuellen Tarifverträgen (iGZ/DGB) für Sicherheit und Stabilität.</p>
-                    </div>
-                  </td></tr>
-                </table>
-              </td></tr>
-              <tr><td>
-                <table role="presentation" width="100%" class="benefit-card">
-                  <tr><td class="inner">
-                    <div class="icon-wrap icon-blue"><img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/pngwingcom_12_Mzh.png" width="36" alt="Finanzielle Sicherheit"></div>
-                    <div>
-                      <h4 class="benefit-title">Finanzielle Sicherheit</h4>
-                      <p class="benefit-desc">Pünktliche Lohnzahlungen, Feiertagsvergütung, Urlaubsansprüche und gute Arbeitsbedingungen.</p>
-                    </div>
-                  </td></tr>
-                </table>
-              </td></tr>
-              <tr><td>
-                <table role="presentation" width="100%" class="benefit-card">
-                  <tr><td class="inner">
-                    <div class="icon-wrap icon-green"><img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/pngwingcom_13.png" width="36" alt="Sozialleistungen"></div>
-                    <div>
-                      <h4 class="benefit-title">Sozialleistungen</h4>
-                      <p class="benefit-desc">Bezahlter Urlaub, Lohnfortzahlung im Krankheitsfall, Zuschläge und faire Rahmenbedingungen.</p>
-                    </div>
-                  </td></tr>
-                </table>
-              </td></tr>
-              <tr><td>
-                <table role="presentation" width="100%" class="benefit-card">
-                  <tr><td class="inner">
-                    <div class="icon-wrap icon-blue"><img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/81966.png" width="36" alt="Arbeitskleidung"></div>
-                    <div>
-                      <h4 class="benefit-title">Arbeitskleidung</h4>
-                      <p class="benefit-desc">Bereitstellung von Arbeits- und Schutzkleidung, wenn erforderlich.</p>
-                    </div>
-                  </td></tr>
-                </table>
-              </td></tr>
-              <tr><td>
-                <table role="presentation" width="100%" class="benefit-card">
-                  <tr><td class="inner">
-                    <div class="icon-wrap icon-green"><img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/5300441200.png" width="36" alt="Gesetzliche & soziale Sicherheit"></div>
-                    <div>
-                      <h4 class="benefit-title">Gesetzliche & soziale Sicherheit</h4>
-                      <p class="benefit-desc">Kündigungsschutz und umfassende Absicherung.</p>
-                    </div>
-                  </td></tr>
-                </table>
-              </td></tr>
-              <tr><td>
-                <table role="presentation" width="100%" class="benefit-card">
-                  <tr><td class="inner">
-                    <div class="icon-wrap icon-blue"><img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/image.png" width="36" alt="Fester Standort"></div>
-                    <div>
-                      <h4 class="benefit-title">Fester Standort</h4>
-                      <p class="benefit-desc">Klare Strukturen und einfache Planung durch feste Einsatzorte.</p>
-                    </div>
-                  </td></tr>
-                </table>
-              </td></tr>
-              <tr><td>
-                <table role="presentation" width="100%" class="benefit-card">
-                  <tr><td class="inner">
-                    <div class="icon-wrap icon-green"><img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/pngwingcom_14.png" width="36" alt="Wohnung"></div>
-                    <div>
-                      <h4 class="benefit-title">Wohnung</h4>
-                      <p class="benefit-desc">Auf Wunsch stellen wir Mitarbeiterinnen und Mitarbeitern <strong>Wohnraum</strong> zur Verfügung.</p>
-                    </div>
-                  </td></tr>
-                </table>
-              </td></tr>
-            </table>
-          </td></tr>
-        </table>
-
-        <!-- FOOTER -->
-        <table role="presentation" class="container foot" cellspacing="0" cellpadding="0" align="center">
-          <tr><td class="p20">
-            <table role="presentation" width="100%">
-              <tr>
-                <td class="stack" style="width:33%;vertical-align:top">
-                  <img src="https://ejzkepf.stripocdn.email/content/guids/CABINET_7fd94653830e80b0e60fc4cb1431872fa2b8115f0f3b7b9f53dd6a446bdc94bb/images/vw.png" width="88" alt="V&E Logo">
-                </td>
-                <td class="stack" style="width:33%;vertical-align:top;font:400 11px Arial, Helvetica, sans-serif;line-height:1.5">
-                  Tel. +49 (0) 5205 9987 – 283<br>
-                  Fax +49 (0) 5205 9987 – 284<br>
-                  Mobil +49 (0) 1762 0668 – 267
-                </td>
-                <td class="stack" style="width:33%;vertical-align:top;font:400 11px Arial, Helvetica, sans-serif;line-height:1.5;text-align:right">
-                  Lindemann-Platz 3<br>33689 Bielefeld
-                </td>
-              </tr>
-            </table>
-          </td></tr>
-        </table>
-
-      </td>
-    </tr>
+    </td></tr>
   </table>
 </body>
 </html>
